@@ -1,0 +1,171 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <link
+      rel="stylesheet"
+      href="https://necolas.github.io/normalize.css/8.0.1/normalize.css"
+    />
+    <link rel="stylesheet" href="styles.css" />
+    <title>WAI-ARIA: Names</title>
+  </head>
+  <body>
+    <header class="header">
+      <h1>🔖 Names or Labels 🏷️</h1>
+      <a href="index.html">👈 return to index page</a>
+    </header>
+    <nav>
+      <ul class="mainmenu">
+        <li><a href="names-labels.html" class="active">Names/labels</a></li>
+        <li><a href="properties-states.html">Properties &amp; States</a></li>
+        <li><a href="relationships.html">Relationships</a></li>
+        <li><a href="roles.html">Roles</a></li>
+        <li><a href="live-regions.html">Live regions</a></li>
+      </ul>
+    </nav>
+    <main>
+      <h2>aria-label:</h2>
+
+      <section class="section">
+        <h3>Button</h3>
+        <pre>
+          &lt;button
+            aria-label="Click to be even happier"
+            onclick="alert('🤗 You are the happiest person 😎')"&gt;
+            😍
+          &lt;/button&gt;
+        </pre>
+        <button
+          aria-label="Click to be even happier"
+          onclick="alert('🤗 You are the happiest person 😎')"
+        >
+          😍
+        </button>
+      </section>
+
+      <section class="section">
+        <h3>Navigation menu</h3>
+        <pre>
+          &lt;nav aria-label="Category menu"&gt;
+            &lt;ul&gt;
+              &lt;li&gt;
+                &lt;a href="http://w3.org" aria-label="The World Wide Web Consortium"&gt;W3C&lt;/a&gt;
+              &lt;/li&gt;
+              &lt;li&gt;
+                &lt;a href="http://w3.org" aria-label="The World Wide Web"&gt;WWW&lt;/a&gt;
+              &lt;/li&gt;
+            &lt;/ul&gt;
+          &lt;/nav&gt;
+        </pre>
+        <nav aria-label="Category menu">
+          <ul>
+            <li>
+              <a
+                href="http://w3.org"
+                aria-label="The World Wide Web Consortium"
+              >
+                W3C
+              </a>
+            </li>
+            <li>
+              <a href="http://w3.org" aria-label="The World Wide Web">WWW</a>
+            </li>
+          </ul>
+        </nav>
+      </section>
+
+      <section class="section">
+        <h3>Form elements</h3>
+        <pre>
+          &lt;form&gt;
+            &lt;input type="search" placeholder="Type any" aria-label="Site Search" name="search" /&gt;
+            &lt;input type="submit" value="Search 🔎" /&gt;
+          &lt;/form&gt;
+        </pre>
+        <form>
+          <input
+            type="search"
+            placeholder="Type any"
+            aria-label="Site Search"
+            name="search"
+          />
+          <input type="submit" value="Search 🔎" />
+        </form>
+      </section>
+
+      <h2>aria-labelledby</h2>
+
+      <section class="section">
+        <h3>Multiple labels</h3>
+        <pre>
+          &lt;div id="billing" class="sr-only"&gt;Billing:&lt;/div&gt;
+          &lt;div id="name"&gt;Name&lt;/div&gt;
+          &lt;input type="text" aria-labelledby="billing name" /&gt;
+          &lt;div id="address"&gt;Address&lt;/div&gt;
+          &lt;input type="text" aria-labelledby="billing address" /&gt;
+        </pre>
+        <div id="billing" class="sr-only">Billing</div>
+
+        <div id="name">Name</div>
+        <input type="text" aria-labelledby="billing name" />
+        <div id="address">Address</div>
+        <input type="text" aria-labelledby="billing address" />
+      </section>
+
+      <section class="section">
+        <h3>Radio elements</h3>
+        <pre>
+          &lt;div id="radio_label"&gt;My radio label&lt;/div&gt;
+            &lt;ul role="radiogroup" aria-labelledby="radio_label"&gt;
+              &lt;li role="radio" aria-checked="true"&gt;Item #1&lt;/li&gt;
+              &lt;li role="radio" aria-checked="false"&gt;Item #2&lt;/li&gt;
+              &lt;li role="radio" aria-checked="false"&gt;Item #3&lt;/li&gt;
+            &lt;/ul&gt;
+          &lt;/div&gt;
+        </pre>
+        <div id="radio_label">My radio label</div>
+        <ul role="radiogroup" aria-labelledby="radio_label">
+          <li role="radio" aria-checked="true">Item #1</li>
+          <li role="radio" aria-checked="false">Item #2</li>
+          <li role="radio" aria-checked="false">Item #3</li>
+        </ul>
+      </section>
+
+      <section class="section">
+        <h3>Definition lists 📝</h3>
+        <pre>
+          &lt;dl&gt;
+            &lt;dt id="anathema"&gt;anathema&lt;/dt&gt;
+            &lt;dd aria-labelledby="anathema"&gt;
+              a ban or curse solemnly pronounced by ecclesiastical authority and
+              accompanied by excommunication
+            &lt;/dd&gt;
+            &lt;dd aria-labelledby="anathema"&gt;a vigorous denunciation : cursor&lt;/dd&gt;
+  
+            &lt;dt id="homily"&gt;homily&lt;/dt&gt;
+            &lt;dd aria-labelledby="homily"&gt;a usually short sermon&lt;/dd&gt;
+            &lt;dd aria-labelledby="homily"&gt;
+              a lecture or discourse on or of a moral theme
+            &lt;/dd&gt;
+          &lt;/dl&gt;
+        </pre>
+        <dl>
+          <dt id="anathema">anathema</dt>
+          <dd aria-labelledby="anathema">
+            a ban or curse solemnly pronounced by ecclesiastical authority and
+            accompanied by excommunication
+          </dd>
+          <dd aria-labelledby="anathema">a vigorous denunciation : cursor</dd>
+
+          <dt id="homily">homily</dt>
+          <dd aria-labelledby="homily">a usually short sermon</dd>
+          <dd aria-labelledby="homily">
+            a lecture or discourse on or of a moral theme
+          </dd>
+        </dl>
+      </section>
+    </main>
+  </body>
+</html>

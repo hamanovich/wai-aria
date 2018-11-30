@@ -1,0 +1,168 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <link
+      rel="stylesheet"
+      href="https://necolas.github.io/normalize.css/8.0.1/normalize.css"
+    />
+    <link rel="stylesheet" href="styles.css" />
+    <title>WAI-ARIA: Properties and States</title>
+  </head>
+  <body>
+    <header class="header">
+      <h1>⛔ Properties and States 🚫</h1>
+      <a href="index.html">👈 return to index page</a>
+    </header>
+    <nav>
+      <ul class="mainmenu">
+        <li><a href="names-labels.html">Names/labels</a></li>
+        <li>
+          <a href="properties-states.html" class="active"
+            >Properties &amp; States</a
+          >
+        </li>
+        <li><a href="relationships.html">Relationships</a></li>
+        <li><a href="roles.html">Roles</a></li>
+        <li><a href="live-regions.html">Live regions</a></li>
+      </ul>
+    </nav>
+    <main>
+      <h2>aria-haspopup</h2>
+
+      <section class="section">
+        <h3>Popup as a descendant in the DOM</h3>
+        <pre>
+          &lt;ul role="menu"&gt;
+            &lt;li role="menuitem" aria-haspopup="true" aria-labelledby="fileLabel-1"&gt;
+              &lt;span id="fileLabel-1"&gt;File&lt;/span&gt;
+              &lt;ul role="menu"&gt;
+                &lt;li role="menuitem"&gt;New&lt;/li&gt;
+                &lt;li role="menuitem"&gt;Open&lt;/li&gt;
+                &lt;li role="menuitem"&gt;Close&lt;/li&gt;
+              &lt;/ul&gt;
+            &lt;/li&gt;
+          &lt;/ul&gt;
+        </pre>
+        <ul role="menu">
+          <li
+            role="menuitem"
+            aria-haspopup="true"
+            aria-labelledby="fileLabel-1"
+          >
+            <span id="fileLabel-1">File</span>
+            <ul role="menu">
+              <li role="menuitem">New</li>
+              <li role="menuitem">Open</li>
+              <li role="menuitem">Close</li>
+            </ul>
+          </li>
+        </ul>
+      </section>
+
+      <h2>aria-hidden</h2>
+      <section class="section">
+        <h3>Icon tick ignored by screen readers</h3>
+        <pre>
+          &lt;span class="icon" aria-hidden="true"&gt;✅&lt;/span&gt;
+        </pre>
+        <span class="icon" aria-hidden="true">✅</span>
+      </section>
+
+      <h2>aria-disabled</h2>
+      <section class="section">
+        <h3>Disabled button</h3>
+        <pre>
+            &lt;button aria-disabled="true"&gt;Mute 🔕&lt;/button&gt;
+          </pre
+        >
+        <button aria-disabled="true">Mute 🔕</button>
+      </section>
+
+      <h2>aria-invalid</h2>
+      <section class="section">
+        <h3>Form validation</h3>
+        <pre>
+          &lt;form&gt;
+            &lt;label for="name"&gt;Add name&lt;/label&gt;
+            &lt;input
+              name="name"
+              id="name"
+              aria-required="true"
+              aria-invalid="false"
+              placeholder="Enter your name"
+              onblur="alert('Invalid name entered ❌')"
+            /&gt;
+
+            &lt;label for="email"&gt;Add email&lt;/label&gt;
+            &lt;input
+              name="email"
+              id="email"
+              aria-required="true"
+              aria-invalid="false"
+              placeholder="Enter e-mail"
+              onblur="alert('Invalid e-mail address ❌')"
+            /&gt;
+          &lt;/form&gt;
+        </pre>
+        <form>
+          <label for="name">Add name</label>
+          <input
+            name="name"
+            id="name"
+            aria-required="true"
+            aria-invalid="false"
+            placeholder="Enter your name"
+            onblur="alert('Invalid name entered ❌')"
+          />
+          <label for="email">Add email</label>
+          <input
+            name="email"
+            id="email"
+            aria-required="true"
+            aria-invalid="false"
+            placeholder="Enter e-mail"
+            onblur="alert('Invalid e-mail address ❌')"
+          />
+        </form>
+      </section>
+
+      <h2>aria-checked &amp; aria-pressed</h2>
+      <section class="section">
+        <h3>Checkbox behavior ☑️</h3>
+        <pre>
+          &lt;form&gt;
+            &lt;span
+              role="checkbox"
+              aria-checked="false"
+              tabindex="0"
+              aria-labelledby="chk1-label"
+            &gt;
+            &lt;/span&gt;
+            &lt;label id="chk1-label" class="linline"&gt;Remember login &lt;/label&gt;
+            &lt;br /&gt;
+            &lt;input type="checkbox" id="chk2-label" /&gt;
+            &lt;label for="chk2-label" class="inline"
+              &gt;Remember password&lt;/label
+            &gt;
+          &lt;/form&gt;
+        </pre>
+        <form>
+          <span
+            role="checkbox"
+            aria-checked="false"
+            tabindex="0"
+            aria-labelledby="chk1-label"
+            onclick="this.setAttribute('aria-checked', true)"
+          >
+          </span>
+          <label id="chk1-label" class="inline">Remember login</label> <br />
+          <input type="checkbox" id="chk2-label" />
+          <label for="chk2-label" class="inline">Remember password</label>
+        </form>
+      </section>
+    </main>
+  </body>
+</html>

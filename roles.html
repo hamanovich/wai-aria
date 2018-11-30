@@ -1,0 +1,269 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <link
+      rel="stylesheet"
+      href="https://necolas.github.io/normalize.css/8.0.1/normalize.css"
+    />
+    <link rel="stylesheet" href="styles.css" />
+    <title>WAI-ARIA: ARIA Roles</title>
+  </head>
+  <body>
+    <header class="header">
+      <h1>🔞 ARIA Roles 🚭</h1>
+      <a href="index.html">👈 return to index page</a>
+    </header>
+    <nav>
+      <ul class="mainmenu">
+        <li><a href="names-labels.html">Names/labels</a></li>
+        <li><a href="properties-states.html">Properties &amp; States</a></li>
+        <li><a href="relationships.html">Relationships</a></li>
+        <li><a href="roles.html" class="active">Roles</a></li>
+        <li><a href="live-regions.html">Live regions</a></li>
+      </ul>
+    </nav>
+    <main>
+      <h2>Landmark Roles</h2>
+
+      <section class="section">
+        <h3>&lt;div&gt; elements instead of the HTML 5 elements</h3>
+        <pre>
+          &lt;div role="banner"&gt;
+            &lt;p&gt;Put company logo, etc. here.&lt;/p&gt;
+          &lt;/div&gt;
+          &lt;div role="navigation"&gt;
+            &lt;ul&gt;
+              &lt;li&gt;Put navigation here&lt;/li&gt;
+            &lt;/ul&gt;
+          &lt;/div&gt;
+          &lt;div role="main"&gt;
+            &lt;p&gt;Put main content here.&lt;/p&gt;
+          &lt;/div&gt;
+          &lt;div role="contentinfo"&gt;
+            &lt;p&gt;Put copyright, etc. here.&lt;/p&gt;
+          &lt;/div&gt;
+        </pre>
+      </section>
+
+      <section class="section">
+        <h3>HTML 5 Elements and ARIA Landmarks</h3>
+        <pre>
+          &lt;header role="banner"&gt;
+            &lt;p&gt;Put company logo, etc. here.&lt;/p&gt;
+          &lt;/header&gt;
+          &lt;nav role="navigation"&gt;
+            &lt;ul&gt;
+              &lt;li&gt;Put navigation here&lt;/li&gt;
+            &lt;/ul&gt;
+          &lt;/nav&gt;
+          &lt;main role="main"&gt;
+              &lt;p&gt;Put main content here.&lt;/p&gt;
+          &lt;/main&gt;
+          &lt;footer role="contentinfo"&gt;
+              &lt;p&gt;Put copyright, etc. here.&lt;/p&gt;
+          &lt;/footer&gt;
+        </pre>
+      </section>
+
+      <h2>Widget Roles</h2>
+      <section class="section">
+        <h3>Tablist</h3>
+        <pre>
+          &lt;ul role="tablist"&gt;
+            &lt;li role="tab"&gt;Home&lt;/li&gt;
+            &lt;li role="tab"&gt;Products&lt;/li&gt;
+            &lt;li role="tab"&gt;Services&lt;/li&gt;
+          &lt;/ul&gt;
+          &lt;div role="tabpanel"&gt;
+            &lt;p&gt;Info about products/p&gt;
+          &lt;/div&gt;
+          &lt;div role="tabpanel"&gt;
+            &lt;p&gt;Info about products/p&gt;
+          &lt;/div&gt;
+          &lt;div role="tabpanel"&gt;
+            &lt;p&gt;Info about products/p&gt;
+          &lt;/div&gt;            
+        </pre>
+      </section>
+
+      <section class="section">
+        <h3>Dialog 💬</h3>
+        <pre>
+          &amp;lt;div role="dialog" aria-labelledby="dialog1Title" aria-describedby="dialog1Desc"&amp;gt;
+            &amp;lt;h3 id="dialog1Title"&amp;gt;Your personal details were successfully updated&amp;lt;/h3&amp;gt;
+            &amp;lt;p id="dialog1Desc"&amp;gt;You can change your details at any time in the user account section.&amp;lt;/p&amp;gt;
+            &amp;lt;button&amp;gt;Close&amp;lt;/button&amp;gt;
+          &amp;lt;/div&amp;gt;
+        </pre>
+        <div
+          role="dialog"
+          aria-labelledby="dialog1Title"
+          aria-describedby="dialog1Desc"
+        >
+          <h3 id="dialog1Title">Your personal details were updated</h3>
+          <p id="dialog1Desc">
+            You can change your details at any time in the user account section.
+          </p>
+          <button>Close</button>
+        </div>
+      </section>
+
+      <section class="section">
+        <h3>Slider 🎚️</h3>
+        <pre>
+          &lt;label for="fader"&gt;Volume&lt;/label&gt;
+          &lt;input type="range"
+            min="1"
+            id="fader"
+            max="100"
+            value="50"
+            step="1"
+            aria-valuemin="1"
+            aria-valuemax="100"
+            aria-valuenow="50"&gt;
+        </pre>
+        <label for="fader">Volume</label>
+        <input
+          type="range"
+          id="fader"
+          min="1"
+          max="100"
+          value="50"
+          step="1"
+          aria-valuemin="1"
+          aria-valuemax="100"
+          aria-valuenow="50"
+        />
+      </section>
+
+      <section class="section">
+        <h3>Texbox 📑</h3>
+        <pre>
+          &lt;div id="txtboxLabel" class="label"&gt;Enter zipcode&lt;/div&gt;
+          &lt;div
+            role="textbox"
+            contenteditable="true"
+            aria-placeholder="5-digit zipcode"
+            aria-labeledby="txtboxLabel"
+          &gt;&lt;/div&gt;
+
+          &lt;div id="txtboxMultilineLabel" class="label"&gt;Enter the tags&lt;/div&gt;
+          &lt;div
+            role="textbox"
+            contenteditable="true"
+            aria-multiline="true"
+            aria-labeledby="txtboxMultilineLabel"
+            aria-required="true"
+          &gt;&lt;/div&gt;
+
+          &lt;form&gt;
+            &lt;label for="txtbox"&gt;Enter zipcode&lt;/label&gt;
+            &lt;input type="text" placeholder="5-digit zipcode" id="txtbox" /&gt;
+
+            &lt;label for="txtboxMultiline"&gt;Enter the tags&lt;/label&gt;
+            &lt;textarea id="txtboxMultiline" required placeholder="Enter the tags"&gt;&lt;/textarea&gt;
+          &lt;/form&gt;
+        </pre>
+        <div id="txtboxLabel" class="label">Enter zipcode</div>
+        <div
+          role="textbox"
+          contenteditable="true"
+          aria-placeholder="5-digit zipcode"
+          aria-labeledby="txtboxLabel"
+        ></div>
+
+        <div id="txtboxMultilineLabel" class="label">Enter the tags</div>
+        <div
+          role="textbox"
+          contenteditable="true"
+          aria-multiline="true"
+          aria-labeledby="txtboxMultilineLabel"
+          aria-required="true"
+        ></div>
+
+        <br />
+
+        <form>
+          <label for="txtbox">Enter zipcode</label>
+          <input type="text" placeholder="5-digit zipcode" id="txtbox" />
+
+          <label for="txtboxMultiline">Enter the tags</label>
+          <textarea
+            id="txtboxMultiline"
+            required
+            placeholder="Enter the tags"
+          ></textarea>
+        </form>
+      </section>
+
+      <h2>Pseudo HTML Roles</h2>
+      <section class="section">
+        <h3>Headings</h3>
+        <pre>
+          &lt;p role="heading" aria-level="1"&gt;Heading #1&lt;/p&gt;
+          &lt;p role="heading" aria-level="2"&gt;Subheading #2&lt;/p&gt;
+        </pre>
+        <p role="heading" aria-level="1">Heading #1</p>
+        <p role="heading" aria-level="2">Subheading #2</p>
+      </section>
+
+      <section class="section">
+        <h3>Checkbox</h3>
+        <pre>
+          &lt;span role="checkbox" aria-checked="false" tabindex="0" aria-labelledby="pref-label"&gt;
+          &lt;/span&gt; &lt;label id="pref-label" class="inline"&gt;Remember preferences&lt;/label&gt;
+        </pre>
+        <span
+          role="checkbox"
+          aria-checked="false"
+          tabindex="0"
+          aria-labelledby="pref-label"
+        >
+        </span>
+        <label id="pref-label" class="inline">Remember preferences</label>
+      </section>
+
+      <h2>Definition Role</h2>
+      <section class="section">
+        <h3>Definitions in Footnotes 📜</h3>
+        <pre>
+          &lt;blockquote&gt;
+            &lt;p&gt;"Today's sub-40s have different horrors, prominent among which are &lt;span id="anomie"&gt;anomie&lt;/span&gt;&lt;sup&gt;&lt;a href="#note-anomie"&gt;[1]&lt;/a&gt;&lt;/sup&gt; and &lt;span id="solipsism"&gt;solipsism&lt;/span&gt;&lt;sup&gt;&lt;a href="#note-solipsism"&gt;[2]&lt;/a&gt;&lt;/sup&gt; and a peculiarly American loneliness: the prospect of dying without once having loved something more than yourself."
+            &lt;br&gt;
+            ―	David Foster Wallace, &lt;em&gt; Consider the Lobster and Other Essays&lt;/em&gt;&lt;/p&gt;
+          &lt;/blockquote&gt;
+          &lt;ol&gt;
+            &lt;li id="note-anomie"role="definition" aria-labelledby="anomie"&gt;social instability resulting from a breakdown of standards and values&lt;/li&gt;
+            &lt;li id="note-solipsism" role="definition" aria-labelledby="solipsism"&gt;a theory in philosophy that your own existence is the only thing that is real or that can be known" or "extreme egocentrism&amp;quot;&lt;/li&gt;
+          &lt;/ol&gt;
+        </pre>
+        <blockquote>
+          <p>
+            "Today's sub-40s have different horrors, prominent among which are
+            <span id="anomie">anomie</span
+            ><sup><a href="#note-anomie">[1]</a></sup> and
+            <span id="solipsism">solipsism</span
+            ><sup><a href="#note-solipsism">[2]</a></sup> and a peculiarly
+            American loneliness: the prospect of dying without once having loved
+            something more than yourself."" <br />
+            ― David Foster Wallace,
+            <em> Consider the Lobster and Other Essays</em>
+          </p>
+        </blockquote>
+        <ol>
+          <li id="note-anomie" role="definition" aria-labelledby="anomie">
+            social instability resulting from a breakdown of standards and
+            values
+          </li>
+          <li id="note-solipsism" role="definition" aria-labelledby="solipsism">
+            a theory in philosophy that your own existence is the only thing
+            that is real or that can be known" or "extreme egocentrism"
+          </li>
+        </ol>
+      </section>
+    </main>
+  </body>
+</html>

@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <link
+      rel="stylesheet"
+      href="https://necolas.github.io/normalize.css/8.0.1/normalize.css"
+    />
+    <link rel="stylesheet" href="styles.css" />
+    <title>WAI-ARIA: Relationships</title>
+  </head>
+  <body>
+    <header class="header">
+      <h1>Relationships: 👨+ 👩 = 👪</h1>
+      <a href="index.html">👈 return to index page</a>
+    </header>
+    <nav>
+      <ul class="mainmenu">
+        <li><a href="names-labels.html">Names/labels</a></li>
+        <li><a href="properties-states.html">Properties &amp; States</a></li>
+        <li><a href="relationships.html" class="active">Relationships</a></li>
+        <li><a href="roles.html">Roles</a></li>
+        <li><a href="live-regions.html">Live regions</a></li>
+      </ul>
+    </nav>
+    <main>
+      <h2>aria-owns</h2>
+      <section class="section">
+        <h3>popup with aria-owns</h3>
+        <pre>
+            &lt;ul role="menu"&gt;
+              &lt;li
+                role="menuitem"
+                aria-haspopup="true"
+                aria-owns="fileMenu"
+                aria-labelledby="fileLabel"
+              &gt;
+                &lt;span id="fileLabel"&gt;File&lt;/span&gt;
+              &lt;/li&gt;
+              &lt;li role="menuitem" aria-haspopup="true" aria-labelledby="viewLabel"&gt;
+                &lt;span id="viewLabel"&gt;View&lt;/span&gt;
+              &lt;/li&gt;
+            &lt;/ul&gt;
+
+            &lt;ul role="menu" id="fileMenu"&gt;
+              &lt;li role="menuitem"&gt;New&lt;/li&gt;
+              &lt;li role="menuitem"&gt;Open&lt;/li&gt;
+            &lt;/ul&gt;
+          </pre
+        >
+        <ul role="menu">
+          <li
+            role="menuitem"
+            aria-haspopup="true"
+            aria-owns="fileMenu"
+            aria-labelledby="fileLabel"
+          >
+            <span id="fileLabel">File</span>
+          </li>
+          <li role="menuitem" aria-haspopup="true" aria-labelledby="viewLabel">
+            <span id="viewLabel">View</span>
+          </li>
+        </ul>
+
+        <ul role="menu" id="fileMenu">
+          <li role="menuitem">New</li>
+          <li role="menuitem">Open</li>
+        </ul>
+      </section>
+    </main>
+  </body>
+</html>

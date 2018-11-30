@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <link
+      rel="stylesheet"
+      href="https://necolas.github.io/normalize.css/8.0.1/normalize.css"
+    />
+    <link rel="stylesheet" href="styles.css" />
+    <title>WAI-ARIA: Live Regions</title>
+  </head>
+  <body>
+    <header class="header">
+      <h1>🏠 Live Regions 🎯</h1>
+      <a href="index.html">👈 return to index page</a>
+    </header>
+    <nav>
+      <ul class="mainmenu">
+        <li><a href="names-labels.html">Names/labels</a></li>
+        <li><a href="properties-states.html">Properties &amp; States</a></li>
+        <li><a href="relationships.html">Relationships</a></li>
+        <li><a href="roles.html">Roles</a></li>
+        <li><a href="live-regions.html" class="active">Live regions</a></li>
+      </ul>
+    </nav>
+    <main>
+      <h2>Live</h2>
+
+      <section class="section">
+        <h3>Alert</h3>
+        <pre>
+          &lt;button
+            type="button"
+            onclick="document.getElementById('alert').setAttribute('role', 'alert')"
+          &gt;
+            Trigger alert ⚠️
+          &lt;/button&gt;
+          &lt;p id="alert" class="alert"&gt;⚠️ The alert will trigger when the button is pressed.&lt;/p&gt;
+        </pre>
+        <button
+          type="button"
+          onclick="document.getElementById('alert').setAttribute('role', 'alert')"
+        >
+          Trigger alert ⚠️
+        </button>
+        <p id="alert" class="alert">
+          ⚠️ The alert will trigger when the button is pressed.
+        </p>
+      </section>
+
+      <section class="section">
+        <h3>aria-live</h3>
+        <pre>
+          &lt;div class="alert" aria-live="polite"&gt;❗ Carefully! Read this text now&lt;/div&gt;
+          &lt;div class="alert" aria-live="assertive"&gt;You have a new contact request&lt;/div&gt;
+        </pre>
+        <div class="alert" aria-live="polite">
+          ❗️️ Carefully! Read this text now
+        </div>
+        <div class="alert" aria-live="assertive">
+          You have a new contact request
+        </div>
+      </section>
+    </main>
+  </body>
+</html>
