@@ -8,8 +8,9 @@ body {
   font-family: BlinkMacSystemFont, -apple-system, "Segoe UI", Roboto, Oxygen,
     Ubuntu, Cantarell, "Fira Sans", "Droid Sans", "Helvetica Neue", Helvetica,
     Arial, sans-serif;
-   background-color: lightcyan;
-   overflow-y: scroll;
+  background-color: lightcyan;
+  overflow-y: scroll;
+  margin: 0;
 }
 
 main {
@@ -44,16 +45,26 @@ pre {
   border-radius: 0.5rem;
   padding: 1rem 1rem 0 0;
   font-size: 0.875rem;
+  font-family: monospace, monospace;
   overflow-x: auto;
   white-space: pre-wrap;
   tab-size: 2;
-  box-shadow: 0 0 .5rem inset rgba(0,0,0,.1);
+  box-shadow: 0 0 0.5rem inset rgba(0, 0, 0, 0.1);
 }
 
 .header {
   background-color: aquamarine;
   padding: 3rem;
   text-align: center;
+}
+
+button,
+input,
+optgroup,
+select,
+textarea {
+  font-family: inherit;
+  font-size: 100%;
 }
 
 button {
@@ -68,7 +79,7 @@ button {
 label,
 .label {
   font-size: 1.25rem;
-  margin-bottom: .25rem;
+  margin-bottom: 0.25rem;
   display: block;
 }
 
@@ -78,7 +89,7 @@ label,
 
 input,
 textarea,
-[role=textbox] {
+[role="textbox"] {
   border: 2px solid black;
   padding: 0.5rem;
   font-size: 1.5rem;
@@ -86,7 +97,7 @@ textarea,
 }
 
 textarea,
-[role=textbox][aria-multiline=true]{
+[role="textbox"][aria-multiline="true"] {
   height: 5rem;
   width: 100%;
   overflow: auto;
@@ -94,13 +105,15 @@ textarea,
 
 input + label,
 textarea + label,
-[role=textbox] + .label {
+[role="textbox"] + .label {
   margin-top: 1rem;
 }
 
 .section {
   padding: 1rem;
   margin: 0 0 2rem;
+  border-radius: .5rem;
+  box-shadow: 0 0 .25rem inset rgba(0, 0, 0, 0.1);
   background-color: azure;
 }
 
@@ -131,7 +144,7 @@ span[role="checkbox"][aria-checked="true"] {
 
 a {
   color: black;
-  transition: .3s color ease;
+  transition: 0.3s color ease;
 }
 
 a:active,
@@ -157,12 +170,23 @@ a.active {
   border: 0;
 }
 
-[role=dialog] {
+[role="dialog"] {
   border: 2px solid black;
   padding: 1rem;
 }
 
 .alert {
   font-size: 1.5rem;
-  text-shadow: 1px 1px 1px rgba(0,0,0,.5);
+  text-shadow: 1px 1px 1px rgba(0, 0, 0, 0.5);
+}
+
+.transition {
+  transition: all 0.3s ease;
+}
+
+.collapsed {
+  visibility: hidden;
+  opacity: 0;
+  height: 0;
+  overflow: hidden;
 }

@@ -4,17 +4,13 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <meta http-equiv="X-UA-Compatible" content="ie=edge" />
-    <link
-      rel="stylesheet"
-      href="https://necolas.github.io/normalize.css/8.0.1/normalize.css"
-    />
     <link rel="stylesheet" href="styles.css" />
     <title>WAI-ARIA: Relationships</title>
   </head>
   <body>
     <header class="header">
       <h1>Relationships: 👨+ 👩 = 👪</h1>
-      <a href="index.html">👈 return to index page</a>
+      <a href="index.html">👈 return to the index page</a>
     </header>
     <nav>
       <ul class="mainmenu">
@@ -26,6 +22,45 @@
       </ul>
     </nav>
     <main>
+      <h2>aria-controls</h2>
+      <section class="section">
+        <h3>Expandable Content</h3>
+        <pre>
+          &lt;button
+            aria-controls="cb"
+            onclick="document.getElementById('cb').classList.remove('collapsed')"
+          &gt;
+            More about color-blindness
+          &lt;/button&gt;
+          &lt;div id="cb" role="region" class="transition collapsed"&gt;
+            &lt;p&gt;
+              Color-blindness (color vision deficiency) is a condition in which a
+              person cannot distinguish certain colors. Red/green color-blindness
+              is the most common form of color vision deficiency. Red/green
+              color-blindness does not mean those colors literally disappear. It
+              means that some kinds of reds &amp; greens (including some oranges,
+              greenish-blues, and reddish-yellows) are difficult to distinguish.
+            &lt;/p&gt;
+          &lt;/div&gt;
+        </pre>
+        <button
+          aria-controls="cb"
+          onclick="document.getElementById('cb').classList.remove('collapsed')"
+        >
+          More about color-blindness 👇
+        </button>
+        <div id="cb" role="region" class="transition collapsed">
+          <p>
+            Color-blindness (color vision deficiency) is a condition in which a
+            person cannot distinguish certain colors. Red/green color-blindness
+            is the most common form of color vision deficiency. Red/green
+            color-blindness does not mean those colors literally disappear. It
+            means that some kinds of reds & greens (including some oranges,
+            greenish-blues, and reddish-yellows) are difficult to distinguish.
+          </p>
+        </div>
+      </section>
+
       <h2>aria-owns</h2>
       <section class="section">
         <h3>popup with aria-owns</h3>
@@ -68,6 +103,25 @@
           <li role="menuitem">New</li>
           <li role="menuitem">Open</li>
         </ul>
+      </section>
+
+      <h2>aria-flowto</h2>
+      <section class="section">
+        <h3>Skipping past advertisements ⏭️</h3>
+        <pre>
+          &lt;h3&gt;News Headline&lt;/h3&gt;
+          &lt;p aria-flowto="part2"&gt;This is the beginning of the news story.&lt;/p&gt;
+          &lt;div aria-label="advertisement"&gt;This is an advertisement.&lt;/div&gt;
+          &lt;p id="part2" aria-label="news story, continued"&gt;
+            This is the rest of the story
+          &lt;/p&gt;
+        </pre>
+        <h3>News Headline</h3>
+        <p aria-flowto="part2">This is the beginning of the news story.</p>
+        <div aria-label="advertisement">This is an advertisement.</div>
+        <p id="part2" aria-label="news story, continued">
+          This is the rest of the story
+        </p>
       </section>
     </main>
   </body>

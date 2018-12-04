@@ -4,17 +4,13 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <meta http-equiv="X-UA-Compatible" content="ie=edge" />
-    <link
-      rel="stylesheet"
-      href="https://necolas.github.io/normalize.css/8.0.1/normalize.css"
-    />
     <link rel="stylesheet" href="styles.css" />
     <title>WAI-ARIA: ARIA Roles</title>
   </head>
   <body>
     <header class="header">
       <h1>🔞 ARIA Roles 🚭</h1>
-      <a href="index.html">👈 return to index page</a>
+      <a href="index.html">👈 return to the index page</a>
     </header>
     <nav>
       <ul class="mainmenu">
@@ -78,13 +74,13 @@
             &lt;li role="tab"&gt;Services&lt;/li&gt;
           &lt;/ul&gt;
           &lt;div role="tabpanel"&gt;
-            &lt;p&gt;Info about products/p&gt;
+            &lt;p&gt;Info about products&lt;/p&gt;
           &lt;/div&gt;
           &lt;div role="tabpanel"&gt;
-            &lt;p&gt;Info about products/p&gt;
+            &lt;p&gt;Info about products&lt;/p&gt;
           &lt;/div&gt;
           &lt;div role="tabpanel"&gt;
-            &lt;p&gt;Info about products/p&gt;
+            &lt;p&gt;Info about products&lt;/p&gt;
           &lt;/div&gt;            
         </pre>
       </section>
@@ -92,11 +88,11 @@
       <section class="section">
         <h3>Dialog 💬</h3>
         <pre>
-          &amp;lt;div role="dialog" aria-labelledby="dialog1Title" aria-describedby="dialog1Desc"&amp;gt;
-            &amp;lt;h3 id="dialog1Title"&amp;gt;Your personal details were successfully updated&amp;lt;/h3&amp;gt;
-            &amp;lt;p id="dialog1Desc"&amp;gt;You can change your details at any time in the user account section.&amp;lt;/p&amp;gt;
-            &amp;lt;button&amp;gt;Close&amp;lt;/button&amp;gt;
-          &amp;lt;/div&amp;gt;
+          &lt;div role="dialog" aria-labelledby="dialog1Title" aria-describedby="dialog1Desc"&gt;
+            &lt;h3 id="dialog1Title"&gt;Your personal details were successfully updated&lt;/h3&gt;
+            &lt;p id="dialog1Desc"&gt;You can change your details at any time in the user account section.&lt;/p&gt;
+            &lt;button&gt;Close&lt;/button&gt;
+          &lt;/div&gt;
         </pre>
         <div
           role="dialog"
@@ -226,7 +222,7 @@
         <label id="pref-label" class="inline">Remember preferences</label>
       </section>
 
-      <h2>Definition Role</h2>
+      <h2>The Definition Role</h2>
       <section class="section">
         <h3>Definitions in Footnotes 📜</h3>
         <pre>
@@ -263,6 +259,17 @@
             that is real or that can be known" or "extreme egocentrism"
           </li>
         </ol>
+      </section>
+
+      <h2>The Presentation Role</h2>
+      <section class="section">
+        <h3>No recognition by screen reader</h3>
+        <pre>
+          &lt;h3 role="presentation"&gt;Deep Thoughts&lt;/h3&gt;
+          &lt;a href="https://google.com" role="presentation"&gt;Google&lt;/a&gt;
+        </pre>
+        <h3 role="presentation">Deep Thoughts</h3>
+        <a href="https://google.com" role="presentation">Google</a>
       </section>
     </main>
   </body>
