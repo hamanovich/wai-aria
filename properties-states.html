@@ -9,7 +9,7 @@
   </head>
   <body>
     <header class="header">
-      <h1>⛔ Properties and States 🚫</h1>
+      <h1>⛔ Properties &amp; States 🚫</h1>
       <a href="index.html">👈 return to the index page</a>
     </header>
     <nav>
@@ -97,9 +97,8 @@
               name="email"
               id="email"
               aria-required="true"
-              aria-invalid="false"
+              aria-invalid="true"
               placeholder="Enter e-mail"
-              onblur="alert('Invalid e-mail address ❌')"
             /&gt;
           &lt;/form&gt;
         </pre>
@@ -111,16 +110,16 @@
             aria-required="true"
             aria-invalid="false"
             placeholder="Enter your name"
-            onblur="alert('Invalid name entered ❌')"
+            onblur="console.warn('Invalid name entered ❌')"
           />
           <label for="email">Add email</label>
           <input
             name="email"
             id="email"
             aria-required="true"
-            aria-invalid="false"
+            aria-invalid="true"
+            value="test"
             placeholder="Enter e-mail"
-            onblur="alert('Invalid e-mail address ❌')"
           />
         </form>
       </section>
@@ -135,6 +134,7 @@
         </pre>
         <button aria-pressed="false">Toggle</button>
       </section>
+
       <section class="section">
         <h3>Checkbox behavior ☑️</h3>
         <pre>
@@ -167,6 +167,34 @@
           <input type="checkbox" id="chk2-label" />
           <label for="chk2-label" class="inline">Remember password</label>
         </form>
+      </section>
+
+      <h2>aria-orientation</h2>
+
+      <section class="section">
+        <pre>
+          &lt;div
+            tabindex="0"
+            role="progressbar"
+            aria-valuemin="0"
+            aria-valuemax="100"
+            aria-valuenow="10"
+            aria-orientation="vertical"
+            class="custom-slider"&gt;
+            Custom slider implementation
+          &lt;/div&gt;
+        </pre>
+        <div
+          tabindex="0"
+          role="progressbar"
+          aria-valuemin="0"
+          aria-valuemax="100"
+          aria-valuenow="10"
+          aria-orientation="vertical"
+          class="custom-slider"
+        >
+          Custom slider implementation
+        </div>
       </section>
     </main>
   </body>
