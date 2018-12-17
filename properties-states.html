@@ -169,6 +169,56 @@
         </form>
       </section>
 
+      <h2>aria-selected</h2>
+
+      <section class="section">
+        <h3>Tab navigation</h3>
+        <pre>
+          &lt;ul class="tablist" role="tablist"&gt;
+            &lt;li
+              id="tab1"
+              class="tab"
+              aria-controls="panel1"
+              aria-selected="true"
+              role="tab"
+              tabindex="0"&gt;
+              Prices
+            &lt;/li&gt;
+            &lt;li
+              id="tab2"
+              class="tab"
+              aria-controls="panel2"
+              role="tab"
+              aria-selected="false"
+              tabindex="0"&gt;
+              Features
+            &lt;/li&gt;
+          &lt;/ul&gt;
+        </pre>
+        <ul class="tablist" role="tablist">
+          <li
+            id="tab1"
+            class="tab"
+            aria-controls="panel1"
+            aria-selected="true"
+            role="tab"
+            tabindex="0"
+          >
+            Prices
+          </li>
+          <li
+            id="tab2"
+            class="tab"
+            aria-controls="panel2"
+            role="tab"
+            aria-selected="false"
+            tabindex="0"
+          >
+            Features
+          </li>
+        </ul>
+      </section>
+
       <h2>aria-orientation</h2>
 
       <section class="section">
