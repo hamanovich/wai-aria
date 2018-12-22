@@ -76,6 +76,18 @@ button {
   cursor: pointer;
 }
 
+button:focus,
+input:focus,
+textarea:focus,
+a:focus {
+  outline: .125rem solid darkcyan;
+  outline-offset: .125rem;
+}
+
+::-moz-focus-inner {
+  border: 0;
+}
+
 label,
 .label {
   font-size: 1.25rem;
