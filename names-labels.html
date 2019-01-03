@@ -9,6 +9,7 @@
   </head>
   <body>
     <header class="header">
+      <a class="sr-only sr-only--focusable skip-to" href="#main">Skip to main content</a>
       <h1>🔖 Names or Labels 📰</h1>
       <a href="index.html">👈 return to the index page</a>
     </header>
@@ -21,11 +22,11 @@
         <li><a href="live-regions.html">Live regions</a></li>
       </ul>
     </nav>
-    <main>
+    <main id="main">
       <h2>aria-label:</h2>
 
-      <section class="section">
-        <h3>Button</h3>
+      <section class="section" aria-labelledby="button">
+        <h3 id="button">Button</h3>
         <pre>
           &lt;button
             aria-label="Click to be even happier"
@@ -35,45 +36,40 @@
         </pre>
         <button
           aria-label="Click to be even happier"
-          onclick="alert('🤗 You are the happiest person 😎')"
-        >
+          onclick="alert('🤗 You are the happiest person 😎')">
           😍
         </button>
       </section>
 
-      <section class="section">
-        <h3>Navigation menu</h3>
+      <section class="section" aria-labelledby="nav-menu">
+        <h3 id="nav-menu">Navigation menu</h3>
         <pre>
-          &lt;nav aria-label="Category menu"&gt;
-            &lt;ul&gt;
-              &lt;li&gt;
-                &lt;a href="http://w3.org" aria-label="The World Wide Web Consortium"&gt;W3C&lt;/a&gt;
-              &lt;/li&gt;
-              &lt;li&gt;
-                &lt;a href="http://w3.org" aria-label="The World Wide Web"&gt;WWW&lt;/a&gt;
-              &lt;/li&gt;
-            &lt;/ul&gt;
-          &lt;/nav&gt;
+          &lt;ul aria-label="Category menu"&gt;
+            &lt;li&gt;
+              &lt;a href="http://w3.org" aria-label="The World Wide Web Consortium"&gt;W3C&lt;/a&gt;
+            &lt;/li&gt;
+            &lt;li&gt;
+              &lt;a href="http://w3.org" aria-label="The World Wide Web"&gt;WWW&lt;/a&gt;
+            &lt;/li&gt;
+          &lt;/ul&gt;
         </pre>
-        <nav aria-label="Category menu">
-          <ul>
-            <li>
-              <a
-                href="http://w3.org"
-                aria-label="The World Wide Web Consortium"
-              >
-                W3C
-              </a>
-            </li>
-            <li>
-              <a href="http://w3.org" aria-label="The World Wide Web">WWW</a>
-            </li>
-          </ul>
-        </nav>
+        <ul aria-label="Category menu">
+          <li>
+            <a
+              href="http://w3.org"
+              aria-label="The World Wide Web Consortium"
+            >
+              W3C
+            </a>
+          </li>
+          <li>
+            <a href="http://w3.org" aria-label="The World Wide Web">WWW</a>
+          </li>
+        </ul>
       </section>
 
-      <section class="section">
-        <h3>Form elements</h3>
+      <section class="section" aria-labelledby="form-elements">
+        <h3 id="form-elements">Form elements</h3>
         <pre>
           &lt;form&gt;
             &lt;input type="search" placeholder="Type any" aria-label="Site Search" name="search" /&gt;
@@ -93,8 +89,8 @@
 
       <h2>aria-labelledby</h2>
 
-      <section class="section">
-        <h3>Multiple labels</h3>
+      <section class="section" aria-labelledby="multiple-labels">
+        <h3 id="multiple-labels">Multiple labels</h3>
         <pre>
           &lt;div id="billing" class="sr-only"&gt;Billing:&lt;/div&gt;
           &lt;div id="name"&gt;Name&lt;/div&gt;
@@ -110,8 +106,8 @@
         <input type="text" aria-labelledby="billing address" />
       </section>
 
-      <section class="section">
-        <h3>Radio elements</h3>
+      <section class="section" aria-labelledby="radio-elements">
+        <h3 id="radio-elements">Radio elements</h3>
         <pre>
           &lt;div id="radio_label"&gt;My radio label&lt;/div&gt;
             &lt;ul role="radiogroup" aria-labelledby="radio_label"&gt;
@@ -129,8 +125,8 @@
         </ul>
       </section>
 
-      <section class="section">
-        <h3>Definition lists 📝</h3>
+      <section class="section" aria-labelledby="def-list">
+        <h3 id="def-list">Definition lists 📝</h3>
         <pre>
           &lt;dl&gt;
             &lt;dt id="anathema"&gt;anathema&lt;/dt&gt;
@@ -163,8 +159,8 @@
         </dl>
       </section>
 
-      <section class="section">
-        <h3>ASCII art</h3>
+      <section class="section" aria-labelledby="ascii">
+        <h3 id="ascii">ASCII art</h3>
         <pre>
           &lt;figure role="img" aria-labelledby="fish-caption"&gt;
             &lt;pre&gt;FIGURE&lt;/pre&gt;
@@ -194,8 +190,8 @@
       </section>
 
       <h2>aria-describedby</h2>
-      <section class="section">
-        <h3>A close button ❌</h3>
+      <section class="section" aria-labelledby="close-btn">
+        <h3 id="close-btn">A close button ❌</h3>
         <pre>
           &lt;button
             aria-label="Close"
@@ -226,18 +222,14 @@
       </section>
 
       <h2>aria-placeholder</h2>
-      <section class="section">
-        <h3>Birthday date 🎂</h3>
+      <section class="section" aria-labelledby="placeholder">
+        <h3 id="placeholder">Birthday date 🎂</h3>
         <pre>
-          &lt;form&gt;
-            &lt;label for="bday1"&gt;Birth Date&lt;/label&gt;
-            &lt;input id="bday1" type="text" aria-placeholder="mm/dd/yyyy format"&gt;
-          &lt;/form&gt;
+          &lt;label for="bday1"&gt;Birth Date&lt;/label&gt;
+          &lt;input id="bday1" type="text" aria-placeholder="mm/dd/yyyy format"&gt;
         </pre>
-        <form>
-          <label for="bday1">Birth Date</label>
-          <input id="bday1" type="text" aria-placeholder="mm/dd/yyyy format" />
-        </form>
+        <label for="bday1">Birth Date</label>
+        <input id="bday1" type="text" aria-placeholder="mm/dd/yyyy format" />
       </section>
     </main>
   </body>

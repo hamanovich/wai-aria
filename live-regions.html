@@ -9,6 +9,7 @@
   </head>
   <body>
     <header class="header">
+      <a class="sr-only sr-only--focusable skip-to" href="#main">Skip to main content</a>
       <h1>🏠 Live Regions 🎯</h1>
       <a href="index.html">👈 return to the index page</a>
     </header>
@@ -21,41 +22,39 @@
         <li><a href="live-regions.html" class="active">Live regions</a></li>
       </ul>
     </nav>
-    <main>
+    <main id="main">
       <h2>Live</h2>
 
-      <section class="section">
-        <h3>Alert</h3>
+      <section class="section" aria-labelledby="title-alert">
+        <h3 id="title-alert">Alert section</h3>
         <pre>
           &lt;button
             type="button"
-            onclick="document.getElementById('alert').setAttribute('role', 'alert')"
-          &gt;
+            onclick="document.getElementById('alert').setAttribute('role', 'alert')"&gt;
             Trigger alert ⚠️
           &lt;/button&gt;
-          &lt;p id="alert" class="alert"&gt;⚠️ The alert will trigger when the button is pressed.&lt;/p&gt;
+          &lt;p id="alert" class="alert"&gt;The alert will trigger when the button is pressed.&lt;/p&gt;
         </pre>
         <button
           type="button"
-          onclick="document.getElementById('alert').setAttribute('role', 'alert')"
-        >
+          onclick="document.getElementById('alert').setAttribute('role', 'alert')">
           Trigger alert ⚠️
         </button>
         <p id="alert" class="alert">
-          ⚠️ The alert will trigger when the button is pressed.
+          The alert will trigger when the button is pressed.
         </p>
       </section>
 
-      <section class="section">
-        <h3>aria-live</h3>
+      <section class="section" aria-labelledby="title-live">
+        <h3 id="title-live">aria-live</h3>
         <pre>
           &lt;div class="alert" aria-live="polite" aria-atomic="true"&gt;❗ Carefully! Read this text now&lt;/div&gt;
-          &lt;div class="alert" aria-live="assertive"&gt;You have a new contact request&lt;/div&gt;
+          &lt;div class="alert" aria-live="assertive" aria-atomic="true"&gt;You have a new contact request&lt;/div&gt;
         </pre>
         <div class="alert" aria-live="polite" aria-atomic="true">
           ❗️️ Carefully! Read this text now
         </div>
-        <div class="alert" aria-live="assertive">
+        <div class="alert" aria-live="assertive" aria-atomic="true">
           You have a new contact request
         </div>
       </section>

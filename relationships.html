@@ -9,6 +9,7 @@
   </head>
   <body>
     <header class="header">
+      <a class="sr-only sr-only--focusable skip-to" href="#main">Skip to main content</a>
       <h1>Relationships: 👨+ 👩 = 👪</h1>
       <a href="index.html">👈 return to the index page</a>
     </header>
@@ -21,10 +22,10 @@
         <li><a href="live-regions.html">Live regions</a></li>
       </ul>
     </nav>
-    <main>
+    <main id="main">
       <h2>aria-controls</h2>
-      <section class="section">
-        <h3>Expandable Content</h3>
+      <section class="section" aria-labelledby="expandable-content">
+        <h3 id="expandable-content">Expandable Content</h3>
         <pre>
           &lt;button
             aria-controls="cb"
@@ -32,7 +33,7 @@
           &gt;
             More about color-blindness
           &lt;/button&gt;
-          &lt;div id="cb" role="region" class="transition collapsed"&gt;
+          &lt;div id="cb" role="region" aria-label="Color-blindness is" class="transition collapsed"&gt;
             &lt;p&gt;
               Color-blindness (color vision deficiency) is a condition in which a
               person cannot distinguish certain colors. Red/green color-blindness
@@ -49,7 +50,7 @@
         >
           More about color-blindness 👇
         </button>
-        <div id="cb" role="region" class="transition collapsed">
+        <div id="cb" role="region" aria-label="Color-blindness is" class="transition collapsed">
           <p>
             Color-blindness (color vision deficiency) is a condition in which a
             person cannot distinguish certain colors. Red/green color-blindness
@@ -62,8 +63,8 @@
       </section>
 
       <h2>aria-owns</h2>
-      <section class="section">
-        <h3>popup with aria-owns</h3>
+      <section class="section" aria-labelledby="aria-owns">
+        <h3 id="aria-owns">popup with aria-owns</h3>
         <pre>
             &lt;ul role="menu"&gt;
               &lt;li
@@ -105,14 +106,15 @@
         </ul>
       </section>
 
-      <section class="section">
-        <h3>Radiogroup and radios</h3>
+      <section class="section" aria-labelledby="radiogroup">
+        <h3 id="radiogroup">Radiogroup and radios</h3>
         <pre>
           &lt;table&gt;
             &lt;tr&gt;
               &lt;td
                 role="radiogroup"
                 tabindex="0"
+                aria-label="My radio label"
                 aria-owns="myradio1 myradio2 myradio3"
                 colspan="3"&gt;
                 My Radio Label
@@ -136,6 +138,7 @@
             <td
               role="radiogroup"
               tabindex="0"
+              aria-label="My radio label"
               aria-owns="myradio1 myradio2 myradio3"
               colspan="3"
             >
@@ -157,8 +160,8 @@
       </section>
 
       <h2>aria-flowto</h2>
-      <section class="section">
-        <h3>Skipping past advertisements ️↩️</h3>
+      <section class="section" aria-labelledby="aria-flowto">
+        <h3 id="aria-flowto">Skipping past advertisements ️↩️</h3>
         <pre>
           &lt;h3&gt;News Headline&lt;/h3&gt;
           &lt;p aria-flowto="part2"&gt;This is the beginning of the news story.&lt;/p&gt;

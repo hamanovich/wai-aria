@@ -9,6 +9,7 @@
   </head>
   <body>
     <header class="header">
+      <a class="sr-only sr-only--focusable skip-to" href="#main">Skip to main content</a>
       <h1>🔞 ARIA Roles 🚭</h1>
       <a href="index.html">👈 return to the index page</a>
     </header>
@@ -21,11 +22,11 @@
         <li><a href="live-regions.html">Live regions</a></li>
       </ul>
     </nav>
-    <main>
+    <main id="main">
       <h2>Landmark Roles</h2>
 
-      <section class="section">
-        <h3>&lt;div&gt; elements instead of the HTML 5 elements</h3>
+      <section class="section" aria-labelledby="html-elements">
+        <h3 id="html-elements">&lt;div&gt; elements instead of the HTML 5 elements</h3>
         <pre>
           &lt;div role="banner"&gt;
             &lt;p&gt;Put company logo, etc. here.&lt;/p&gt;
@@ -44,8 +45,8 @@
         </pre>
       </section>
 
-      <section class="section">
-        <h3>HTML 5 Elements and ARIA Landmarks</h3>
+      <section class="section" aria-labelledby="aria-landmarks">
+        <h3 id="aria-landmarks">HTML 5 Elements and ARIA Landmarks</h3>
         <pre>
           &lt;header role="banner"&gt;
             &lt;p&gt;Put company logo, etc. here.&lt;/p&gt;
@@ -65,8 +66,8 @@
       </section>
 
       <h2>Widget Roles</h2>
-      <section class="section">
-        <h3>Tablist</h3>
+      <section class="section" aria-labelledby="role-tablist">
+        <h3 id="role-tablist">Tablist</h3>
         <pre>
           &lt;ul role="tablist"&gt;
             &lt;li role="tab"&gt;Home&lt;/li&gt;
@@ -85,8 +86,8 @@
         </pre>
       </section>
 
-      <section class="section">
-        <h3>Dialog 💬</h3>
+      <section class="section" aria-labelledby="role-dialog">
+        <h3 id="role-dialog">Dialog 💬</h3>
         <pre>
           &lt;div role="dialog" aria-labelledby="dialog1Title" aria-describedby="dialog1Desc"&gt;
             &lt;h3 id="dialog1Title"&gt;Your personal details were successfully updated&lt;/h3&gt;
@@ -96,6 +97,7 @@
         </pre>
         <div
           role="dialog"
+          aria-modal="true"
           aria-labelledby="dialog1Title"
           aria-describedby="dialog1Desc"
         >
@@ -107,8 +109,8 @@
         </div>
       </section>
 
-      <section class="section">
-        <h3>Slide️r</h3>
+      <section class="section" aria-labelledby="role-slider">
+        <h3 id="role-slider">Slide️r</h3>
         <pre>
           &lt;label for="fader"&gt;Volume&lt;/label&gt;
           &lt;input type="range"
@@ -135,15 +137,15 @@
         />
       </section>
 
-      <section class="section">
-        <h3>Texbox 📑</h3>
+      <section class="section" aria-labelledby="role-textbox">
+        <h3 id="role-textbox">Texbox 📑</h3>
         <pre>
           &lt;div id="txtboxLabel" class="label"&gt;Enter zipcode&lt;/div&gt;
           &lt;div
             role="textbox"
             contenteditable="true"
             aria-placeholder="5-digit zipcode"
-            aria-labeledby="txtboxLabel"
+            aria-labelledby="txtboxLabel"
           &gt;&lt;/div&gt;
 
           &lt;div id="txtboxMultilineLabel" class="label"&gt;Enter the tags&lt;/div&gt;
@@ -151,24 +153,22 @@
             role="textbox"
             contenteditable="true"
             aria-multiline="true"
-            aria-labeledby="txtboxMultilineLabel"
+            aria-labelledby="txtboxMultilineLabel"
             aria-required="true"
           &gt;&lt;/div&gt;
 
-          &lt;form&gt;
-            &lt;label for="txtbox"&gt;Enter zipcode&lt;/label&gt;
-            &lt;input type="text" placeholder="5-digit zipcode" id="txtbox" /&gt;
+          &lt;label for="txtbox"&gt;Enter zipcode&lt;/label&gt;
+          &lt;input type="text" placeholder="5-digit zipcode" id="txtbox" /&gt;
 
-            &lt;label for="txtboxMultiline"&gt;Enter the tags&lt;/label&gt;
-            &lt;textarea id="txtboxMultiline" required placeholder="Enter the tags"&gt;&lt;/textarea&gt;
-          &lt;/form&gt;
+          &lt;label for="txtboxMultiline"&gt;Enter the tags&lt;/label&gt;
+          &lt;textarea id="txtboxMultiline" required placeholder="Enter the tags"&gt;&lt;/textarea&gt;
         </pre>
         <div id="txtboxLabel" class="label">Enter zipcode</div>
         <div
           role="textbox"
           contenteditable="true"
           aria-placeholder="5-digit zipcode"
-          aria-labeledby="txtboxLabel"
+          aria-labelledby="txtboxLabel"
         ></div>
 
         <div id="txtboxMultilineLabel" class="label">Enter the tags</div>
@@ -176,28 +176,26 @@
           role="textbox"
           contenteditable="true"
           aria-multiline="true"
-          aria-labeledby="txtboxMultilineLabel"
+          aria-labelledby="txtboxMultilineLabel"
           aria-required="true"
         ></div>
 
         <br />
 
-        <form>
-          <label for="txtbox">Enter zipcode</label>
-          <input type="text" placeholder="5-digit zipcode" id="txtbox" />
+        <label for="txtbox">Enter zipcode</label>
+        <input type="text" placeholder="5-digit zipcode" id="txtbox" />
 
-          <label for="txtboxMultiline">Enter the tags</label>
-          <textarea
-            id="txtboxMultiline"
-            required
-            placeholder="Enter the tags"
-          ></textarea>
-        </form>
+        <label for="txtboxMultiline">Enter the tags</label>
+        <textarea
+          id="txtboxMultiline"
+          required
+          placeholder="Enter the tags"
+        ></textarea>
       </section>
 
       <h2>Pseudo HTML Roles</h2>
-      <section class="section">
-        <h3>Headings</h3>
+      <section class="section" aria-labelledby="role-heading">
+        <h3 id="role-heading">Headings</h3>
         <pre>
           &lt;p role="heading" aria-level="1"&gt;Heading #1&lt;/p&gt;
           &lt;p role="heading" aria-level="2"&gt;Subheading #2&lt;/p&gt;
@@ -206,8 +204,8 @@
         <p role="heading" aria-level="2">Subheading #2</p>
       </section>
 
-      <section class="section">
-        <h3>Checkbox</h3>
+      <section class="section" aria-labelledby="role-checkbox">
+        <h3 id="role-checkbox">Checkbox</h3>
         <pre>
           &lt;span role="checkbox" aria-checked="false" tabindex="0" aria-labelledby="pref-label"&gt;
           &lt;/span&gt; &lt;label id="pref-label" class="inline"&gt;Remember preferences&lt;/label&gt;
@@ -223,8 +221,8 @@
       </section>
 
       <h2>The Definition Role</h2>
-      <section class="section">
-        <h3>Definitions in Footnotes 📜</h3>
+      <section class="section" aria-labelledby="definitions">
+        <h3 id="definitions">Definitions in Footnotes 📜</h3>
         <pre>
           &lt;blockquote&gt;
             &lt;p&gt;"Today's sub-40s have different horrors, prominent among which are &lt;span id="anomie"&gt;anomie&lt;/span&gt;&lt;sup&gt;&lt;a href="#note-anomie"&gt;[1]&lt;/a&gt;&lt;/sup&gt; and &lt;span id="solipsism"&gt;solipsism&lt;/span&gt;&lt;sup&gt;&lt;a href="#note-solipsism"&gt;[2]&lt;/a&gt;&lt;/sup&gt; and a peculiarly American loneliness: the prospect of dying without once having loved something more than yourself."
@@ -262,8 +260,8 @@
       </section>
 
       <h2>The Presentation Role</h2>
-      <section class="section">
-        <h3>No recognition by screen reader</h3>
+      <section class="section" aria-labelledby="role-presentation">
+        <h3 id="role-presentation">No recognition by screen reader</h3>
         <pre>
           &lt;h3 role="presentation"&gt;Deep Thoughts&lt;/h3&gt;
           &lt;a href="https://google.com" role="presentation"&gt;Google&lt;/a&gt;

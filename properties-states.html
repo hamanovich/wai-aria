@@ -7,8 +7,9 @@
     <link rel="stylesheet" href="styles.css" />
     <title>WAI-ARIA: Properties and States</title>
   </head>
-  <body>
+  <body>    
     <header class="header">
+      <a class="sr-only sr-only--focusable skip-to" href="#main">Skip to main content</a>
       <h1>⛔ Properties &amp; States 🚫</h1>
       <a href="index.html">👈 return to the index page</a>
     </header>
@@ -16,20 +17,18 @@
       <ul class="mainmenu">
         <li><a href="names-labels.html">Names/labels</a></li>
         <li>
-          <a href="properties-states.html" class="active"
-            >Properties &amp; States</a
-          >
+          <a href="properties-states.html" class="active">Properties &amp; States</a>
         </li>
         <li><a href="relationships.html">Relationships</a></li>
         <li><a href="roles.html">Roles</a></li>
         <li><a href="live-regions.html">Live regions</a></li>
       </ul>
     </nav>
-    <main>
+    <main id="main">
       <h2>aria-haspopup</h2>
 
-      <section class="section">
-        <h3>Popup as a descendant in the DOM</h3>
+      <section class="section" aria-labelledby="aria-haspopup">
+        <h3 id="aria-haspopup">Popup as a descendant in the DOM</h3>
         <pre>
           &lt;ul role="menu"&gt;
             &lt;li role="menuitem" aria-haspopup="true" aria-labelledby="fileLabel-1"&gt;
@@ -45,88 +44,101 @@
         <ul role="menu">
           <li
             role="menuitem"
+            tabindex="0"
             aria-haspopup="true"
-            aria-labelledby="fileLabel-1"
-          >
-            <span id="fileLabel-1">File</span>
+            aria-labelledby="fileLabel">
+            <span id="fileLabel">File</span>
             <ul role="menu">
               <li role="menuitem">New</li>
               <li role="menuitem">Open</li>
               <li role="menuitem">Close</li>
             </ul>
           </li>
+          <li
+            role="menuitem"
+            tabindex="0"
+            aria-haspopup="true"
+            aria-labelledby="editLabel">
+            <span id="editLabel">Edit</span>
+            <ul role="menu">
+              <li role="menuitem">Update</li>
+              <li role="menuitem">Remove</li>
+            </ul>
+          </li>
         </ul>
       </section>
 
       <h2>aria-hidden</h2>
-      <section class="section">
-        <h3>Icon tick ignored by screen readers</h3>
+      <section class="section" aria-labelledby="aria-hidden">
+        <h3 id="aria-hidden">Icon tick ignored by screen readers</h3>
         <pre>
-          &lt;span class="icon" aria-hidden="true"&gt;✅&lt;/span&gt;
+          &lt;button&gt;
+            &lt;span class="icon" aria-hidden="true"&gt;✅&lt;/span&gt;
+            Great job!
+          &lt;/button&gt;
         </pre>
-        <span class="icon" aria-hidden="true">✅</span>
+        <button>
+          <span class="icon" aria-hidden="true">✅</span>
+          Great job!
+        </button>
       </section>
 
       <h2>aria-disabled</h2>
-      <section class="section">
-        <h3>Disabled button</h3>
+      <section class="section" aria-labelledby="aria-disabled">
+        <h3 id="aria-disabled">Disabled button</h3>
         <pre>
             &lt;button aria-disabled="true"&gt;Mute 🔕&lt;/button&gt;
-          </pre
-        >
-        <button aria-disabled="true">Mute 🔕</button>
+          </pre>
+        <button aria-disabled="true">
+          Mute 
+          <span class="icon" aria-hidden="true">🔕</span>
+        </button>
       </section>
 
       <h2>aria-invalid</h2>
-      <section class="section">
-        <h3>Form validation</h3>
+      <section class="section" aria-labelledby="aria-invalid">
+        <h3 id="aria-invalid">Form validation</h3>
         <pre>
-          &lt;form&gt;
-            &lt;label for="name"&gt;Add name&lt;/label&gt;
-            &lt;input
-              name="name"
-              id="name"
-              aria-required="true"
-              aria-invalid="false"
-              placeholder="Enter your name"
-              onblur="alert('Invalid name entered ❌')"
-            /&gt;
-
-            &lt;label for="email"&gt;Add email&lt;/label&gt;
-            &lt;input
-              name="email"
-              id="email"
-              aria-required="true"
-              aria-invalid="true"
-              placeholder="Enter e-mail"
-            /&gt;
-          &lt;/form&gt;
-        </pre>
-        <form>
-          <label for="name">Add name</label>
-          <input
+          &lt;label for="name"&gt;Add name&lt;/label&gt;
+          &lt;input
             name="name"
             id="name"
             aria-required="true"
             aria-invalid="false"
             placeholder="Enter your name"
-            onblur="console.warn('Invalid name entered ❌')"
-          />
-          <label for="email">Add email</label>
-          <input
+            onblur="alert('Invalid name entered ❌')"/&gt;
+
+          &lt;label for="email"&gt;Add email&lt;/label&gt;
+          &lt;input
             name="email"
             id="email"
             aria-required="true"
             aria-invalid="true"
-            value="test"
-            placeholder="Enter e-mail"
-          />
-        </form>
+            placeholder="Enter e-mail"/&gt;
+        </pre>
+        <label for="name">Add name</label>
+        <input
+          name="name"
+          id="name"
+          aria-required="true"
+          aria-invalid="false"
+          placeholder="Enter your name"
+          onblur="console.warn('Invalid name entered ❌')"
+        />
+        <label for="email">Add email</label>
+        <input
+          name="email"
+          id="email"
+          aria-required="true"
+          aria-invalid="false"
+          value="test"
+          placeholder="Enter e-mail"
+        />
       </section>
 
       <h2>aria-checked &amp; aria-pressed</h2>
-      <section class="section">
-        <h3>Aria-pressed️</h3>
+      <section class="section" aria-labelledby="aria-pressed">
+        <h3 id="aria-pressed">Aria-pressed️</h3>
         <pre>
           &lt;button aria-pressed="false"&gt;
             Toggle
@@ -135,50 +147,44 @@
         <button aria-pressed="false">Toggle</button>
       </section>
 
-      <section class="section">
-        <h3>Checkbox behavior ☑️</h3>
+      <section class="section" aria-labelledby="checkbox-behavior">
+        <h3 id="checkbox-behavior">Checkbox behavior ☑️</h3>
         <pre>
-          &lt;form&gt;
-            &lt;span
-              role="checkbox"
-              aria-checked="false"
-              tabindex="0"
-              aria-labelledby="chk1-label"
-            &gt;
-            &lt;/span&gt;
-            &lt;label id="chk1-label" class="linline"&gt;Remember login &lt;/label&gt;
-            &lt;br /&gt;
-            &lt;input type="checkbox" id="chk2-label" /&gt;
-            &lt;label for="chk2-label" class="inline"
-              &gt;Remember password&lt;/label
-            &gt;
-          &lt;/form&gt;
-        </pre>
-        <form>
-          <span
+          &lt;span
             role="checkbox"
             aria-checked="false"
             tabindex="0"
             aria-labelledby="chk1-label"
-            onclick="this.setAttribute('aria-checked', true)"
-          >
-          </span>
-          <label id="chk1-label" class="inline">Remember login</label> <br />
-          <input type="checkbox" id="chk2-label" />
-          <label for="chk2-label" class="inline">Remember password</label>
-        </form>
+          &gt;
+          &lt;/span&gt;
+          &lt;label id="chk1-label" class="linline"&gt;Remember login &lt;/label&gt;
+          &lt;br /&gt;
+          &lt;input type="checkbox" id="chk2-label" /&gt;
+          &lt;label for="chk2-label" class="inline"
+            &gt;Remember password&lt;/label
+          &gt;
+        </pre>
+        <span
+          role="checkbox"
+          aria-checked="false"
+          tabindex="0"
+          aria-labelledby="chk1-label"
+          onclick="this.setAttribute('aria-checked', true)">
+        </span>
+        <label id="chk1-label" class="inline">Remember login</label> <br />
+        <input type="checkbox" id="chk2-label" name="remember" />
+        <label for="chk2-label" class="inline">Remember password</label>
       </section>
 
       <h2>aria-selected</h2>
 
-      <section class="section">
-        <h3>Tab navigation</h3>
+      <section class="section" aria-labelledby="tab-nav">
+        <h3 id="tab-nav">Tab navigation</h3>
         <pre>
           &lt;ul class="tablist" role="tablist"&gt;
             &lt;li
               id="tab1"
               class="tab"
-              aria-controls="panel1"
               aria-selected="true"
               role="tab"
               tabindex="0"&gt;
@@ -187,7 +193,6 @@
             &lt;li
               id="tab2"
               class="tab"
-              aria-controls="panel2"
               role="tab"
               aria-selected="false"
               tabindex="0"&gt;
@@ -199,21 +204,17 @@
           <li
             id="tab1"
             class="tab"
-            aria-controls="panel1"
             aria-selected="true"
             role="tab"
-            tabindex="0"
-          >
+            tabindex="0">
             Prices
           </li>
           <li
             id="tab2"
             class="tab"
-            aria-controls="panel2"
             role="tab"
             aria-selected="false"
-            tabindex="0"
-          >
+            tabindex="0">
             Features
           </li>
         </ul>
@@ -221,7 +222,8 @@
 
       <h2>aria-orientation</h2>
 
-      <section class="section">
+      <section class="section" aria-labelledby="aria-orientation">
+        <h3 id="aria-orientation">Custom slider</h3>
         <pre>
           &lt;div
             tabindex="0"
@@ -236,13 +238,12 @@
         </pre>
         <div
           tabindex="0"
-          role="progressbar"
+          role="slider"
           aria-valuemin="0"
           aria-valuemax="100"
           aria-valuenow="10"
           aria-orientation="vertical"
-          class="custom-slider"
-        >
+          class="custom-slider">
           Custom slider implementation
         </div>
       </section>
