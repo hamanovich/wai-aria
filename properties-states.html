@@ -68,6 +68,29 @@
         </ul>
       </section>
 
+      <h2>aria-expanded</h2>
+      <section class="section" aria-labelledby="aria-expanded">
+        <h3 id="aria-expanded">Toggle Bar</h3>
+        <pre>
+          &lt;button aria-expanded="true" id="TLink1" onclick="toggle('navbar', 'TLink1')"&gt;
+            Toggle Navigation Bar
+          &lt;/button&gt;
+
+          &lt;ul id="navbar"&gt;
+            &lt;li&gt;&lt;a href="#"&gt;Link 1&lt;/a&gt;&lt;/li&gt;
+            &lt;li&gt;&lt;a href="#"&gt;Link 2&lt;/a&gt;&lt;/li&gt;
+            &lt;li&gt;&lt;a href="#"&gt;Link 3&lt;/a&gt;&lt;/li&gt;
+          &lt;/ul&gt;
+        </pre>
+
+        <button aria-expanded="true" aria-haspopup="true" id="TLink1">Toggle Navigation Bar</button>
+        <ul id="navbar">
+          <li><a href="#">Link 1</a></li>
+          <li><a href="#">Link 2</a></li>
+          <li><a href="#">Link 3</a></li>
+        </ul>
+      </section>
+
       <h2>aria-hidden</h2>
       <section class="section" aria-labelledby="aria-hidden">
         <h3 id="aria-hidden">Icon tick ignored by screen readers</h3>
@@ -105,8 +128,7 @@
             id="name"
             aria-required="true"
             aria-invalid="false"
-            placeholder="Enter your name"
-            onblur="alert('Invalid name entered ❌')"/&gt;
+            placeholder="Enter your name"/&gt;
 
           &lt;label for="email"&gt;Add email&lt;/label&gt;
           &lt;input
@@ -123,7 +145,6 @@
           aria-required="true"
           aria-invalid="false"
           placeholder="Enter your name"
-          onblur="console.warn('Invalid name entered ❌')"
         />
         <label for="email">Add email</label>
         <input
@@ -144,7 +165,7 @@
             Toggle
           &lt;/button&gt;
         </pre>
-        <button aria-pressed="false">Toggle</button>
+        <button aria-pressed="false" id="pressme">Toggle</button>
       </section>
 
       <section class="section" aria-labelledby="checkbox-behavior">
@@ -248,5 +269,33 @@
         </div>
       </section>
     </main>
+      
+    <script>
+      document.getElementById('TLink1').addEventListener('click', toggle.bind(this, 'navbar', 'TLink1'));
+      document.getElementById('name').addEventListener('blur', ariaInvalid);
+      document.getElementById('pressme').addEventListener('mousedown', ariaPressed);
+
+      // Aria-expanded
+      function toggle(id, id2) {
+        var n = document.getElementById(id);
+        if (n.style.display !== 'none')  {
+          n.style.display = 'none';
+          document.getElementById(id2).setAttribute('aria-expanded', 'false');
+        } else {
+          n.style.display = '';
+          document.getElementById(id2).setAttribute('aria-expanded', 'true');
+        }
+      }
+
+      // Aria-invalid
+      function ariaInvalid() {
+        this.setAttribute('aria-invalid', this.value === '!@#');
+      }
+
+      // Aria-pressed
+      function ariaPressed() {
+        this.setAttribute('aria-pressed', !JSON.parse(this.getAttribute('aria-pressed')));
+      }
+    </script>
   </body>
 </html>

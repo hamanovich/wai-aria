@@ -97,6 +97,21 @@ label,
   display: inline-block;
 }
 
+[aria-invalid=true] {
+  outline-offset: .125rem;
+  outline: .125rem solid tomato;
+}
+
+[aria-pressed=false] {
+  background: -webkit-linear-gradient(left, #00bf7c 0%,#dc143c 100%);
+  background: linear-gradient(to right, #00bf7c 0%,#dc143c 100%);
+}
+
+[aria-pressed=true] {
+  background: -webkit-linear-gradient(left, #dc143c 0%,#00bf7c 100%);
+  background: linear-gradient(to right, #dc143c 0%,#00bf7c 100%);
+}
+
 input,
 textarea,
 [role='textbox'] {
